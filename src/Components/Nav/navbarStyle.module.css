@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'droid';
+    src: url('../../Assets/font/Droid.ttf');
+}
+.nav{
+    background: white;
+}
+a{
+    visibility: visible;
+    font-family: 'droid';
+}
+.list{
+    color: black;
+    font-family: 'droid';
+}
+.list:hover{
+    background: #a3e0a8;
+    border-radius: 5px;
+}
+.logout_btn{
+    border: none;
+    background-color: white;
+    border-radius: 2rem;
+    padding: 2px 6px;
+    font-family: 'droid';
+
+}
+.navbtn{
+    background-color: #81ba00 !important;
+    border: none !important;
+    font-family: 'droid';
+}
+.logo{
+    display: inline-block ;
+    color: #81ba00;
+    vertical-align: bottom;
+}
+
+
+    

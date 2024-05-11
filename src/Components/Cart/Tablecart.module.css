@@ -1,0 +1,367 @@
+/*///////////////////// start table cart section///////////////// */
+@font-face {
+    font-family: 'droid';
+    src: url('../../Assets/font/Droid.ttf');
+}
+.cart_table{
+    padding-top: 50px;
+}
+thead td,tbody td{
+    text-align: center !important;  
+    font-family: 'droid';
+}
+tbody td{
+    vertical-align: middle;
+}
+.img-cart{
+    text-align: center;
+}
+.img-cart img{
+    width: 80%;
+    border-radius: 1rem;
+}
+.quant input{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+tbody td a i{
+    font-size: 25px;
+    background-color: #81ba00;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 1rem;
+    font-family: 'droid';
+}
+/*///////////////////// end table cart section///////////////// */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.h3{
+    margin-bottom: 0;
+    font-family: 'droid';
+}
+div.text_uppercase{
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    font-family: 'droid';
+}
+.table{
+    width: 100%;
+}
+.btn#sub{
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 1px solid #ddd;
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    padding-top: 8px;
+    color: #54e346;
+}
+.btn#sub:hover{
+    background-color: #54e346;
+    color: #FFF;
+    border: 1ps solid #333;
+}
+.fa_cog{
+    color: #a8a8a8;
+    font-size: 0.8rem;
+}
+.ml_auto.btn:hover span{
+    color: #333;
+}
+div.btn{
+    padding: 8px 20px;
+    border-radius: 0.5rem;
+}
+.notification{
+    background-color: #54e346;
+    padding: 0px 10px;
+}
+.notification button.btn{
+    background-color: inherit;
+    box-shadow: none;
+}
+.close{
+    font-size: 1rem;
+    font-weight: normal;
+    opacity: 1;
+}
+.close:hover{
+    color: #EEE;
+}
+.alert_dismissible .close{
+    position: unset;
+}
+button:focus{
+    outline: none;
+}
+.h4{
+    margin: 0;
+    font-family: 'droid';
+}
+.editors{
+    position: relative;
+}
+.editors img{
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+}
+#img1,#img2,#img3{
+    position: absolute;
+}
+#img1{
+    top: -15px;
+    left: -50px;
+}
+#img2{
+    top: -15px;
+    left: -70px;
+}
+#img3{
+    top: -15px;
+    left: -90px;
+}
+div.text_muted{
+    font-size: 0.9rem;
+}
+.table{
+    overflow: hidden;
+    margin-top: 15px;
+}
+.table_responsive{
+    /* overflow: hidden; */
+    margin-top: 50px;
+}
+thead tr {
+    /* letter-spacing: 0.08rem;
+    font-weight: normal; */
+    height: 33px;
+    border-top: 1px solid gainsboro;
+    font-family: 'droid';
+}
+thead tr th{
+    letter-spacing: 0.10rem;
+    font-family: 'droid';
+    /* font-weight: normal; */
+}
+tr td,
+tr th{
+    border: none;
+    text-align: center;
+    font-family: 'droid';
+}
+thead{
+    border-bottom: 1px solid #54e346;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: 'droid';
+}
+thead{
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.table.activitites{
+    position: relative;
+}
+.table.activitites thead::after{
+    position: absolute;
+    content: "";
+    background: #FFF;
+    padding: 0px 8px;
+    top: 38px;
+    letter-spacing: 0.08rem;
+    font-size: 0.6rem;
+    color: #54e346;
+    font-weight: 600;
+}
+tbody td.item{
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-align: left;
+}
+del{
+    font-size: 0.85rem;
+}
+.red{
+    color: #ff0000;
+}
+div.new{
+    font-size: 0.7rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.08rem;
+    color: #e5e519;
+    display: inline-block;
+}
+tbody td.item img{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+thead th.header{
+    text-align: center;
+    font-family: 'droid';
+}
+tbody tr{
+    padding-top: 10px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    transition: all .4s ease-in-out;
+}
+tbody tr:last-child{
+    border: none;
+}
+td .close,
+td .btn{
+    opacity: 0;
+    background: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+tbody tr:hover{
+    transform: scale(1.004);
+    box-shadow: 2px 2px 10px #a5a5a5;
+    cursor: pointer;
+    overflow: hidden;
+    scroll-behavior: unset;
+}
+tbody tr:hover .close{
+    font-size: 1.5rem;
+    opacity: 1;
+}
+tbody tr:hover .close:hover{
+    color: #aaa;
+}
+tbody tr:hover .btn{
+    border: 1px solid #ddd;
+    opacity: 1;
+    background: #fff;
+}
+/* a{
+    font-size: 0.8rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    visibility: hidden;
+} */
+a:hover{
+    text-decoration: none;
+}
+tbody tr:hover a{
+    visibility: visible;
+}
+
+hr.items{
+    position: relative;
+    margin: 0;
+    margin-top: 10px;
+}
+hr.items:after{
+    position: absolute;
+    content: "ALL ITEMS";
+    background: #FFF;
+    top: -9px;
+    padding: 0px 8px;
+    letter-spacing: 0.08rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+.subtotal{
+    border-bottom-left-radius: 50px;
+    background-color: #ccc;
+    margin-bottom: 100px;
+}
+.tag,.fa-shoppping-cart{
+    font-size: 0.5rem;
+}
+button.btn{
+    background-color: inherit;
+}
+button.btn:hover{
+    background-color: #cecccc;
+    box-shadow: none;
+    outline: none;
+}
+.delete , .pluse{
+    font-size: 25px;
+    color: #54e346;
+    border:none;
+    background-color: #FFF;
+}
+.checkbtn,.checkbtn:hover{
+    border: none;
+    background-color: #54e346;
+    border-color: #54e346;
+    color: #fff;
+    border-radius: 2rem;
+    padding: 10px 20px;
+    margin-top:60px;
+    margin-right: 20px;
+}
+.checkbtncon{
+    margin-top: 100px;
+}
+.emptty img{
+    display: block;
+    margin: 0 auto;
+}
+.emptty h4{
+    text-align: center;
+}
+@media(max-width:760px){
+    .table.activitites thead::after{
+        top: 35px;
+    }
+}
+@media(max-width:576px){
+    .table.activitites thead::after{
+        top: 55px;
+    }
+    #img1{
+        top: -8px;
+        left: 0px;
+    }
+    #img2{
+        top: -8px;
+        left: 15px;
+    }
+    #img3{
+        top: -8px;
+        left: 30px;
+    }
+    .editors img{
+        width: 20px;
+        height: 20px;
+        border: 1px solid #FFF;
+    }
+}
+
+@media(max-width:400px){
+    .notification{
+        font-size: 0.7rem;
+    }
+    .close{
+        font-size: 0.7rem;
+        font-weight: normal;
+        opacity: 1;
+    }
+    .wrapper{
+        padding: 10px;
+    }
+}
+

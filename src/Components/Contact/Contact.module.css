@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'droid';
+  src: url('../../Assets/font/Droid.ttf');
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+} */
+button, input {
+  overflow: visible;
+}
+.contactussection {
+  padding: 400px 0 50px 0;
+  /* background-image: url(../../assets/rural-table-wood-landscape-260nw-194030081\ \(1\).webp); */
+  background-image: url(../../Assets/images/back.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -300px;
+}
+.section-text .section-subtitle {
+  font-size: 28px;
+  font-family: 'droid';
+  color: rgb(241, 72, 31);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.357;
+}
+.section-text .section-title {
+  font-size: 60px;
+  font-family: 'droid';
+  color: rgb(51, 64, 106);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.167;
+  margin: 6px 0 12px;
+}
+.section-text .section-description {
+  font-size: 18px;
+  font-family: 'droid';
+  color: rgb(63, 60, 87);
+  line-height: 1.556;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-form{
+  margin-top: 150px;
+}
+.contactussection .contact-form {
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 10px 15px 0px rgba(59, 55, 188, 0.5);
+  padding: 34px 30px;
+}
+.contactussection .contact-form .contact-form-aqua {
+  margin-bottom: -19.008px;
+}
+.contactussection .contact-form .contact-head {
+  font-family: 'droid';
+  font-weight: bold;
+  font-size: 24px;
+  color: #1d193b;
+}
+.contactussection .contact-form .contact-frm {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin: 20px 0px;
+  border: none;
+  color: #66696f;
+  font-size: 14px;
+  outline: none;
+  border-bottom: 1.008px solid #e9e9ea;
+}
+.contactussection .contact-form .contact-msg {
+  display: block;
+  width: 100%;
+  height: 107.008px;
+  border: none;
+  color: #66696f;
+  font-size: 14px;
+  outline: none;
+  border-bottom: 1.008px solid #e9e9ea;
+  margin: 20px 0;
+  margin-top: 30px;
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+.global-btn {
+  text-decoration: none;
+  padding: 15.008px 51.008px;
+  border-radius: 25.008px;
+  color: #81ba00;
+  font-weight: 600;
+ background-color: white;
+  transition: all 0.3s ease;
+  border: 1px solid #81ba00;
+  font-family: 'droid';
+}

@@ -1,0 +1,397 @@
+@font-face {
+  font-family: 'droid';
+  src: url('../../Assets/font/Droid.ttf');
+}
+
+.Trending {
+  margin: 80px 0;
+  background-color: white;
+  direction: ltr;
+}
+
+.trend__header {
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: 'droid';
+
+}
+
+.trend__header img {
+  width: 50px;
+}
+
+.trend__header h3 {
+  color: #000000;
+  font: 600 40px/48px "Playfair Display", sans-serif;
+  letter-spacing: 0.4px;
+  font-family: 'droid';
+
+
+}
+
+.nav_tabs>li.active>a,
+.nav_tabs>li:hover>a,
+.nav_tabs>li.active>a:hover,
+.nav_tabs>li:focus>a,
+.nav_tabs>li.active>a:focus {
+  background: #81ba00;
+  border: 2px solid #81ba00;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.nav_tabs>li>a {
+  background: none;
+  border: 2px solid #e0e0df;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -khtml-border-radius: 25px;
+  color: #888888;
+  font: 500 16px/18px "Poppins", Helvetica, sans-serif;
+  margin: 0;
+  padding: 10px 30px;
+  position: relative;
+  text-transform: capitalize;
+  transition: all 300ms ease-in-out 0s;
+  -webkit-transition: all 300ms ease-in-out 0s;
+  -moz-transition: all 300ms ease-in-out 0s;
+  -o-transition: all 300ms ease-in-out 0s;
+  -ms-transition: all 300ms ease-in-out 0s;
+}
+
+.nav_tabs>li {
+  float: left;
+  margin: 0;
+  position: relative;
+}
+
+.tab_box_heading {
+  float: left;
+  text-align: center;
+  width: 100%;
+  margin: 0 0 30px;
+  font-family: 'droid';
+
+}
+
+.tab_box_heading ul li {
+  margin: 0 10px 0 0;
+}
+
+.nav.nav_tabs {
+  border: medium none;
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  padding: 0;
+}
+
+.tthometab {
+  float: left;
+  width: 100%;
+}
+
+.btn button {
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+
+.cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  padding: 2rem;
+  /* width: 27%; */
+  /* height: 450px; */
+  box-shadow: -1px 15px 30px -12px rgb(32, 32, 32);
+  border-radius: 0.9rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.product_image {
+  /* height: 230px; */
+  width: 100%;
+  transform: translate(0, -1.5rem);
+  transition: transform 500ms ease-in-out;
+  /* filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4)); */
+}
+
+.product_image img {
+  /* margin-top: 15px;
+width: 100%; */
+  max-width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.product_info {
+  text-align: center;
+  font-family: 'droid';
+
+}
+
+.card:hover .product_image {
+  transform: translate(-1.5rem, -7rem) rotate(-20deg);
+}
+
+.product_info h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: 'droid';
+
+
+}
+
+.product_info p {
+  margin: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'droid';
+
+
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.buy_btn {
+  background-color: var(--btn);
+  padding: 0.6rem 3.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 300ms ease;
+}
+
+.checked {
+  color: #81ba00;
+}
+
+.buy_btn:hover {
+  background-color: #81ba00;
+}
+
+.fav {
+  box-sizing: border-box;
+  background: #fff;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid#000;
+  display: grid;
+  place-items: center;
+}
+
+.svg {
+  height: 25px;
+  width: 25px;
+  fill: #fff;
+  transition: all 500ms ease;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fav:hover .svg {
+  fill: #81ba00;
+}
+
+@media screen and (max-width: 1200px) {
+
+  /* body {
+      height: auto;
+  }
+
+  .container {
+      padding: 2rem 0;
+      width: 100%;
+      flex-direction: column;
+      gap: 3rem;
+  } */
+  /* .cards {
+      display: flex;
+
+  }
+
+  .card {
+      width: 50%;
+  } */
+}
+
+/*  */
+.items {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+  flex-wrap: wrap;
+}
+
+/*  */
+.btn-quickview a {}
+
+/*  */
+.item {
+  width: 20%;
+  height: 414px;
+  margin: 20px 50px;
+  /* border-left: #81ba00 solid 1px; */
+  border-right: #81ba00 solid 1px;
+  border-right: #81ba00 solid 1px;
+  border-bottom: #81ba00 solid 1px;
+  border-radius: 25px;
+  background-image: url('../../Assets/images/beautiful-palm-leaves-white-background-top-view-space-text-exotic-plant_185193-4765.avif');
+  background-repeat: no-repeat;
+  background-size: 398px;
+
+}
+
+.item__img {
+  width: 100%;
+  text-align: center;
+  height: 65%;
+  /* transform: translate(0, 1.5rem); */
+  transition: transform 500ms ease-in-out;
+}
+
+.item__img img {
+  width: 126px;
+  /* height: 100%; */
+  margin-top: 135px;
+  margin-left: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.item_dec {
+  width: 100%;
+  text-align: center;
+  font-family: 'droid';
+
+}
+
+.item_dec h4,
+.item_dec p {
+  text-align: end;
+  margin-right: 15px;
+  font-family: 'droid';
+
+}
+
+.rating {
+  width: 100%;
+}
+
+/*  */
+.button-group {
+  display: none;
+  margin: 15px;
+}
+
+.button-group button {
+  height: 50px;
+  width: 50px;
+
+  background-color: white;
+  color: #81ba00;
+  border: 1px solid #81ba00;
+  border-radius: 15px;
+  /* border: none; */
+  /* margin-bottom: 15px; */
+}
+
+.button-group {
+  position: relative;
+  /* left: -9px; */
+
+  bottom: 255px;
+}
+
+.button-group button a {
+  color: #81ba00;
+}
+
+.button-group button {
+  /* color: #81ba00; */
+  margin-bottom: 10px;
+}
+
+.item:hover {
+  border-radius: 25px;
+  box-shadow: -1px 15px 40px 1px rgb(187, 186, 186);
+  border-bottom: 3px solid #81ba00;
+}
+
+.item:hover .button-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.button-group button:hover {
+  background-color: #81ba00;
+  color: white;
+}
+
+.button-group button:hover a {
+  color: white;
+}
+
+.item:hover .item__img {
+  transform: translate(0rem, -0.5rem) rotate(0deg);
+}
+
+/*  */
+@media (max-width: 1202px) {
+  .item {
+      width: 29%;
+  }
+}
+
+@media (max-width: 992px) {
+  .cards{
+      flex-wrap: wrap;
+  }
+  .item {
+      width: 35%;
+  }
+}
+
+@media (max-width: 786px) {
+  .item {
+      width: 40%;
+      justify-content: space-around;
+  }
+}
+
+@media (max-width: 527px) {
+  .item {
+      width: 70%;
+      margin: 25px 0px;
+      /* padding: 15px; */
+  }
+}

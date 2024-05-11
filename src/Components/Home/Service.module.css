@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'droid';
+    src: url('../../Assets/font/Droid.ttf');
+  }
+  
+.Services {
+    margin: 80px 0 0 0;
+    height: 40%;
+    /* background-image: url('../../assets/images/pattern.png'); */
+    background-image: url('../../Assets/images/pattern.png');
+
+    background-repeat: repeat;
+    /* overflow: auto; */
+    /* transform: translate(-50%, -50%); */
+    /* background-color: #000; */
+}
+
+.services .services_content {
+    /* float: left; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .service
+{
+    width: 20%;
+    background: rgba(0, 0, 0, 0) url("/assets/images/service-bg-1.png") no-repeat scroll 0 0 / contain ;
+
+} */
+
+.services .services_content{
+    /* float: left; */
+    width: 100%;
+    margin: 20px 0 0;
+    text-align: center;
+}
+
+.services .services_content .service_content .services_title {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    line-height: 26px;
+    margin: 0 0 15px;
+    text-transform: capitalize;
+    font-style: italic;
+
+ 
+    color: #000000;
+    font-family: 'droid';
+
+
+}
+
+.services .services_content .service_content .service_desc {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    font-family: 'droid';
+
+}
+
+.services .services_content .service_img {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.services .services_content .service .service_img img {
+    z-index: 3;
+    position: relative;
+    margin: 50px 0;
+    transition: 400ms ease-in-out;
+    -webkit-transition: 400ms ease-in-out;
+    -moz-transition: 400ms ease-in-out;
+    -o-transition: 400ms ease-in-out;
+    -ms-transition: 400ms ease-in-out;
+    max-width: 30%;
+}
+
+.services .services_content .service:hover .service_img img {
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1202px) {
+    .services_content{
+        /* flex-wrap: wrap; */
+    }
+    .service {
+        width: 25%;
+        margin: 15px 0px;
+        /* padding: 15px; */
+    }
+}
+@media (max-width: 992px) {
+    .services_content{
+        flex-wrap: wrap;
+    }
+    .service {
+        width: 30%;
+        margin: 15px 0px;
+        /* padding: 15px; */
+    }
+}
+@media (max-width: 786px) {
+    .services_content{
+        flex-wrap: wrap;
+    }
+    .service {
+        width: 45%;
+        margin: 15px 0px;
+        /* padding: 15px; */
+    }
+}
+@media (max-width: 527px) {
+    .services_content{
+        flex-wrap: wrap;
+    }
+    .service {
+        width: 100%;
+        margin: 15px 0px;
+        /* padding: 15px; */
+    }
+}

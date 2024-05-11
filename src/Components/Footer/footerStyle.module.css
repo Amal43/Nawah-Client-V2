@@ -1,0 +1,30 @@
+*{
+    scroll-behavior: smooth;
+}
+@font-face {
+    font-family: 'droid';
+    src: url('../../Assets/font/Droid.ttf');
+  }
+a{
+    visibility: visible;
+}
+.list {
+    padding: 0.5rem 1rem;
+}
+.list a{
+    color:black;
+    visibility: visible;
+    font-size: 1rem;
+    font-family: 'droid';
+}
+.list:hover{
+    background: #81ba00;
+    border-radius: 5px;
+}
+footer{
+    background-image: url('../../Assets/images/pattern.png');
+    align-self: center;
+}
+footer h2{
+    font-size: 15px;
+}
