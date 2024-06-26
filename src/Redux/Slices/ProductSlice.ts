@@ -1,8 +1,8 @@
-import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import { AsyncThunkAction, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
-import { IProduct } from "../../types/iProduct";
-import Product from "../../Components/Product/Product";
+import { IProduct } from "../../interfaces/iProduct";
 import { toast } from 'react-toastify';
+import { AsyncThunkConfig } from "@reduxjs/toolkit/dist/createAsyncThunk";
 
 
 interface PrdState {
@@ -12,10 +12,13 @@ interface PrdState {
     farmproduct:{},
     toprate:[],
     fertilizer:[],
+    dates:[],
+    palm:[]
 }
 
 
-const url='http://localhost:3001';
+const url=`${process.env.REACT_APP_BASE_URL}/product`;
+
 const id:any=localStorage.getItem('userId');
 const parsedId =JSON.parse(id);
 console.log(parsedId)
@@ -27,7 +30,7 @@ export const getallproducts= createAsyncThunk(
     'product/getallproducts',
     async()=>{
         try{
-            const res= await axios.get(`${url}/product/allPrds`,);
+            const res= await axios.get(`${url}/`,);
             console.log(res.data)
             return res.data
         }catch (err:any){
@@ -41,9 +44,9 @@ export const getallproducts= createAsyncThunk(
 
 export const AddProduct= createAsyncThunk(
     'product/AddProduct',
-    async(form:FormData,{ rejectWithValue })=>{
+    async(form:FormData,{ rejectWithValue ,dispatch})=>{
         try{
-            const res= await axios.post(`${url}/product/add`,
+            const res= await axios.post(`${url}/`,
                 form,
                 {
                     headers: {
@@ -52,6 +55,7 @@ export const AddProduct= createAsyncThunk(
                     },
                 }
             );
+            dispatch(getallproducts());
             return res.data
         }catch (err:any){
             const errorMessage = err?.response?.data?.message ||
@@ -64,9 +68,9 @@ export const AddProduct= createAsyncThunk(
 
 export const editProduct= createAsyncThunk(
     'product/editProduct',
-    async(data:{form:FormData,id?:string},{ rejectWithValue })=>{
+    async(data:{form:FormData,id?:string},{ rejectWithValue,dispatch })=>{
         try{
-            const res= await axios.put(`${url}/product/${data.id}`,
+            const res= await axios.put(`${url}/${data.id}`,
                 data.form,
                 {
                     headers: {
@@ -75,6 +79,7 @@ export const editProduct= createAsyncThunk(
                     },
                 }
             );
+            dispatch(getallproducts());
             return res.data
         }catch (err:any){
             const errorMessage = err?.response?.data?.message ||
@@ -87,16 +92,17 @@ export const editProduct= createAsyncThunk(
 
 export const deleteProduct= createAsyncThunk(
     'product/deleteProduct',
-    async(id:string,{ rejectWithValue })=>{
+    async(id:string,{ rejectWithValue ,dispatch})=>{
         console.log(id)
         try{
-            const res= await axios.delete(`${url}/product/delete/${id}`,
+            const res= await axios.delete(`${url}/${id}`,
                 {
                     headers: {
                         authorization: `Bearer ${parsedToken}`,
                     },
                 }
             );
+            dispatch(getallproducts());
             return res.data
         }catch (err:any){
             const errorMessage = err?.response?.data?.message ||
@@ -116,20 +122,23 @@ const productSlice = createSlice({
         farmerprds: [],
         farmproduct: {},
         toprate: [],
-        fertilizer:[]
+        fertilizer:[],
+        palm:[],
+        dates:[]
     }as PrdState,
     
     reducers:{
-        showdetails: (state, action) => {
-            // let item = state.products.filter((item:IProduct) => item._id === action.payload._id)
-            // state.details = item;
-            console.log(Product)
-        },
         farmerPrds: (state) => {
             state.farmerprds = state?.products?.data?.filter((item:IProduct) => item?.farmerId === parsedId);
         },
         fertilizers: (state) => {
             state.fertilizer = state?.products?.data?.filter((item:IProduct) => item?.category === "fertilizer");
+        },
+        dates: (state) => {
+            state.dates = state?.products?.data?.filter((item:IProduct) => item?.category === "dates");
+        },
+        palm: (state) => {
+            state.palm = state?.products?.data?.filter((item:IProduct) => item?.category === "palm");
         },
     },
 
@@ -199,7 +208,11 @@ const productSlice = createSlice({
 });
 
 
-export const { showdetails ,farmerPrds ,fertilizers} = productSlice.actions;
+export const { farmerPrds ,fertilizers,dates,palm} = productSlice.actions;
 
 
 export default productSlice.reducer;
+
+function dispatch(arg0: AsyncThunkAction<any, void, AsyncThunkConfig>) {
+    throw new Error("Function not implemented.");
+}

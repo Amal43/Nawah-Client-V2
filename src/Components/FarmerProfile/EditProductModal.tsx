@@ -8,12 +8,11 @@ import * as Yup from 'yup';
 import { AsyncThunkConfig } from '@reduxjs/toolkit/dist/createAsyncThunk';
 import { useDispatch } from 'react-redux';
 import { editProduct ,getallproducts} from '../../Redux/Slices/ProductSlice';
-import { IProduct } from '../../types/iProduct';
+import { IProduct } from '../../interfaces/iProduct';
 
 export default function EditProductModal(item:any) {
     const product:IProduct = item?.data
     const [open, setOpen] = useState(false);
-    const[isEdit ,SetIsEdit] = useState(false)
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
@@ -53,19 +52,11 @@ export default function EditProductModal(item:any) {
 
             try {
                 await dispatch(editProduct({form , id:product?._id}));
-                SetIsEdit(true)
             } catch (error) {
                 console.log(error);
             }
         },
     })
-
-    useEffect(() => {
-        if(isEdit){
-            dispatch(getallproducts());
-            SetIsEdit(false);
-        }
-    }, [isEdit]);
 
     return (
         <div>

@@ -1,6 +1,6 @@
 import { createSlice} from "@reduxjs/toolkit";
 import { toast } from 'react-toastify';
-import { IProduct } from "../../types/iProduct";
+import { IProduct } from "../../interfaces/iProduct";
 
 interface wishState {
     wishItems: Array<IProduct>,

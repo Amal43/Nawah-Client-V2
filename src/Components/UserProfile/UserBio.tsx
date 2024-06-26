@@ -1,4 +1,4 @@
-import { IUser } from "../../types/iUser";
+import { IUser } from "../../interfaces/iUser";
 
 function UserBio(user:any) {
   const userr:IUser =user?.UserData;

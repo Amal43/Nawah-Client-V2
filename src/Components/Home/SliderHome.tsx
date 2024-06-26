@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { getallproducts } from '../../Redux/Slices/ProductSlice';
 import { AsyncThunkConfig } from "@reduxjs/toolkit/dist/createAsyncThunk";
 import Trend from "./Slider.module.css";
-import { IProduct } from "../../types/iProduct";
+import { IProduct } from "../../interfaces/iProduct";
 import { RootState } from "../../Redux/Store";
 import { useAppSelector } from "../../Redux/hooks";
 
 
 function SliderHome() {
-  const api = "http://localhost:3001/uploads/";
+  const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
   const [arr, setArr] = useState<Array<IProduct>>([]);
   const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
 

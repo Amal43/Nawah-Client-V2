@@ -4,7 +4,7 @@ import Trend from "./Trending.module.css";
 import { getallproducts } from '../../Redux/Slices/ProductSlice';
 import { useDispatch } from "react-redux";
 import Rating from "@mui/material/Rating";
-import { IProduct } from "../../types/iProduct";
+import { IProduct } from "../../interfaces/iProduct";
 import { AsyncThunkConfig } from "@reduxjs/toolkit/dist/createAsyncThunk";
 
 

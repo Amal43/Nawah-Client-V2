@@ -1,9 +1,9 @@
-import IEngineer from '../../types/iEngineer';
+import IEngineer from '../../interfaces/iEngineer';
 import FarmarHederStyle from '../FarmerProfile/FarmHeader.module.css';
 
 function Header(engineer:any) {
   const engineerr:IEngineer =engineer?.data;
-  const api ="http://localhost:3001/uploads/";
+  const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
 
   return (
     <>

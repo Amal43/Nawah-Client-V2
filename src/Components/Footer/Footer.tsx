@@ -8,8 +8,8 @@ function Footer() {
         <div className={" py-3 px-0"}>
           <div className={"row p-0 m-0"}>
             {/* Logo&About */}
-            <div className="col-md-3 text-sm-center col-sm-12 mb-3 ps-5">
-              <div className="justify-content-sm-center text-dark d-flex mb-3  ">
+            <div className="col-md-3 text-center col-sm-6 mb-3 ps-5">
+              <div className="justify-content-center text-dark d-flex mb-3  ">
                 <img
                   className="img-fluid img-thumbnail"
                   style={{ width: "50px", height: "50px",borderRadius:70 }}
@@ -28,7 +28,7 @@ function Footer() {
               </p>
             </div>
             {/* شــــــركتنا */}
-            <div className="col-md-3 col-sm-12 text-sm-center justify-content-sm-center">
+            <div className="col-md-3 col-sm-6 text-center justify-content-center mb-4">
               <h2 className="fs-3  ">
                 شركتنـــا
               </h2>
@@ -47,7 +47,7 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="col-md-3 col-sm-12 text-sm-center justify-content-sm-center">
+            <div className="col-md-3 col-sm-6 text-center justify-content-center mb-4">
               <h2 className="fs-3  ">
                 معلومات الموقع
               </h2>
@@ -68,7 +68,7 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="col-md-3 col-sm-12 text-sm-center justify-content-sm-center">
+            <div className="col-md-3 col-sm-6 text-center justify-content-center mb-4">
               <h2 className="fs-3">
                 معلومات عنا
               </h2>

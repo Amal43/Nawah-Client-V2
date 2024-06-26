@@ -48,7 +48,7 @@ function FarmarProfileSide() {
         <div className="row">
 
           {/* Profile Side Started*/}
-          <div className={`col-md-3 ${FarmerStyle.profileNav}`}>
+          <div className={`col-lg-3 col-md-12 ${FarmerStyle.profileNav}`}>
             <div>
               <div className={`${FarmerStyle.profile_heading} rounded-1`}>
                 <h2 className={`text-center`}>{`${farmer?.fname} ${farmer?.lname}`}</h2>
@@ -114,7 +114,7 @@ function FarmarProfileSide() {
               </li>
             </ul>
           </div>
-          <div className="col-md-9">
+          <div className="col-lg-9 col-md-12">
               {isInfoOpen &&(
                 <div style={{display: 'block', width: 900, padding: 30}}>
                     <FarmerBio Data={farmer} />

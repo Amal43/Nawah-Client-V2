@@ -1,4 +1,4 @@
-import IEngineer from "../../types/iEngineer";
+import IEngineer from "../../interfaces/iEngineer";
 
 function EngineerBio(engineer:any) {
   

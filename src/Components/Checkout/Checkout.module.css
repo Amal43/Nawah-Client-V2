@@ -1,0 +1,181 @@
+  @font-face {
+    font-family: 'droid';
+    src: url('../../Assets/font/Droid.ttf');
+  }
+  
+  .modal {
+    width: 96%;
+    max-width: 1000px;
+    height: 460px;
+    margin-top: 20px;
+    margin-bottom: 300px !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: white;
+  }
+  .modal .modal_product {
+    width: 40%;
+    height: 100%;
+    float: left;
+    position: relative;
+  }
+  .modal .modal_product .product {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  .modal .modal_product .product .product_slideshow {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .modal .modal_product .product .product_price {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.18rem;
+    text-align: center;
+  }
+  .modal .modal_product .round_shape {
+    width: 125%;
+    height: 150%;
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #4dcd16;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+  .modal .modal_info {
+    width: 60%;
+    height: 100%;
+    float: right;
+    position: relative;
+  }
+  .modal .modal_info .info {
+    width: 90%;
+    height: 85%;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0%, -50%);
+  }
+  .modal .modal_info .info h2 {
+    font-size: 2.25rem;
+    margin-left: 1rem;
+    font-family: 'droid';
+  }
+  .modal .modal_info .info form .form_list {
+    margin-top: 1.5rem;
+    margin-left: 3.5rem;
+  }
+  .modal .modal_info .info form .form_list .form_list_row {
+    margin: 1rem 0;
+  }
+  .modal .modal_info .info form .form_list .form_list_row label {
+    font-size: 1rem;
+    font-family: 'droid';
+  }
+  .modal .modal_info .info form .form_list .form_list_row input {
+    width: 70%;
+    font-size: 1rem;
+    padding: 0.4rem 0;
+    border: none;
+    display: inline-block;
+    border-bottom: solid 2px #999;
+    background-color: transparent;
+    transition: all 0.3s ease;
+  }
+  .modal .modal_info .info form .form_list .form_list_row input:focus {
+    border-color: #cdb196;
+  }
+  .modal .modal_info .info form .form_list .form_list_row .user .fa-user {
+    color: #999;
+    font-size: 1rem;
+  }
+  .modal .modal_info .info form .form_list .form_listrow .user input {
+    position: relative;
+    left: -16px;
+    padding-left: 30px;
+  }
+
+  .modal .modal_info .info form .form_list .form_list_row .number .fa-credit-card {
+    color: #999;
+    font-size: 1rem;
+  }
+  .modal .modal_info .info form .form_list .form_list_row .number input {
+    position: relative;
+    left: -20px;
+    padding-left: 30px;
+  }
+  .modal .modal_info .info form .form_list .form_list_row .cvc .fa-question-circle {
+    color: dodgerblue;
+    display: inline-block;
+    position: relative;
+    left: 0.75rem;
+  }
+  .modal .modal_info .info form .form_list .form_list_row .cvc input {
+    width: 70px;
+    text-align: center;
+  }
+  .modal .modal_info .info .btn {
+    color: white;
+    font-size: 1rem;
+    margin-left: 1rem;
+    padding: 1rem 2.5rem;
+    bottom: 0;
+    border: none;
+    border-radius: 3px;
+    background-color: #37c417;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+
+  }
+  .modal .modal_info .info .btn:hover {
+    background-color: #37e22b;
+  }
+  .checkoutInput input{
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    outline: none;
+    margin-bottom: 14px;
+    font-size: 20px;
+  }
+  .checkoutInput::placeholder {
+    color: #caced2;
+    opacity: 1; 
+  }
+.imgdiv{
+  text-align: center;
+}
+.prdimg{
+  width: 280px;
+}
+@media (max-width: 992px) {
+  .prdimg{
+    width: 240px;
+  }
+}
+
+@media (max-width: 786px) {
+  .prdimg{
+    width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .prdimg{
+    width: 170px;
+  }
+}
+

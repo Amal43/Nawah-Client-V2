@@ -9,7 +9,7 @@ import * as Yup from 'yup';
 import { AsyncThunkConfig } from '@reduxjs/toolkit/dist/createAsyncThunk';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../Redux/hooks';
-import { IProduct } from '../../types/iProduct';
+import { IProduct } from '../../interfaces/iProduct';
 import { fertilizers } from '../../Redux/Slices/ProductSlice';
 import Table from '@mui/material/Table';
 import { addNotes } from '../../Redux/Slices/FarmerSlice';

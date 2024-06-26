@@ -1,6 +1,6 @@
 import { createSlice} from "@reduxjs/toolkit";
 import { toast } from 'react-toastify';
-import { IProduct } from "../../types/iProduct";
+import { IProduct } from "../../interfaces/iProduct";
 
 interface cartState {
     cartItems: Array<IProduct>,
@@ -76,6 +76,12 @@ const cartSlice = createSlice({
             }
         },
         clearCart: (state) => {
+            state.cartItems=[];
+            state.cartTotal= 0;
+            state.numItemsInCart=0;
+            state.shipping=500;
+            state.tax=0
+            state.orderTotal=0
             localStorage.removeItem('cart');
         },
         calculateTotals: (state) => {
@@ -83,10 +89,7 @@ const cartSlice = createSlice({
             state.orderTotal = state.cartTotal + state.shipping + state.tax;
             localStorage.setItem('cart', JSON.stringify(state));
         },
-
     },
-    
-    
 });
 
 export const { addItem,clearCart,increase,decrease ,removeItem} = cartSlice.actions;

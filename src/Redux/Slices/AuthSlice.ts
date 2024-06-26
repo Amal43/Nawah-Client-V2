@@ -7,8 +7,7 @@ interface AuthState {
     authUser: any;
 }
 
-
-const url='http://localhost:3001';
+const url=  process.env.REACT_APP_BASE_URL;
 
 export const registerUser= createAsyncThunk(
     'auth/registerUser',

@@ -6,7 +6,7 @@ import { useAppSelector } from '../../Redux/hooks';
 import { addItem } from '../../Redux/Slices/CartSlice';
 import { addFavItem } from '../../Redux/Slices/WishSlice';
 import { AsyncThunkConfig } from '@reduxjs/toolkit/dist/createAsyncThunk';
-import { IProduct } from '../../types/iProduct';
+import { IProduct } from '../../interfaces/iProduct';
 import { FaCartShopping,FaHeart} from "react-icons/fa6";
 import DetailModal from './DetailModal';
 
@@ -15,7 +15,7 @@ function Productcard(item: any) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
-    const api = "http://localhost:3001/uploads/";
+    const api = `${process.env.REACT_APP_UPLOAD_URL}/`;
     const nav = useNavigate();
 
     const authUser:any= useAppSelector((state)=>state.auth);
@@ -51,7 +51,7 @@ function Productcard(item: any) {
                                     )
                             ) :
                             (
-                                nav('/')
+                                nav('/welcome')
                             )
                         }
                     >

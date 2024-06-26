@@ -20,8 +20,10 @@ import Cart from './Pages/Cart';
 import UserProfile from './Pages/UserProfile';
 import FarmerProfile from './Pages/FarmerProfile';
 import EngineerProfile from './Pages/EngineerProfile';
-
-
+import CheckOut from './Pages/CheckOut';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`);
 
 function App() {
   return (
@@ -29,7 +31,8 @@ function App() {
         <ToastContainer/>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<WelcomePage/>}/>
+            <Route path="/" element={<Home/>}/>
+            <Route path='welcome' element ={<WelcomePage/>}/>
             <Route path='login' element ={<Login/>}/>
             <Route path='signup' element ={<SignUp/>}/>
             <Route path='aboutus' element ={< AboutUs/>}/>
@@ -37,6 +40,7 @@ function App() {
             <Route path='contact' element ={<Contact/>}/>
             <Route path='product' element ={<Products/>}/>
             <Route path='cart' element ={<Cart/>}/>
+            <Route path='checkout' element ={<CheckOut/>}/>
             <Route path='userProfile' element ={<UserProfile/>}/>
             <Route path='farmerProfile' element ={<FarmerProfile/>}/>
             <Route path='engineerProfile' element ={<EngineerProfile/>}/>

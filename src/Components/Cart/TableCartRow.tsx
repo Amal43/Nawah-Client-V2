@@ -6,7 +6,7 @@ import { AsyncThunkConfig } from "@reduxjs/toolkit/dist/createAsyncThunk";
 
 
 function TableCartRow(item:any) {
-  const api="http://localhost:3001/uploads/";
+  const api=`${process.env.REACT_APP_UPLOAD_URL}/`;
   const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
 
   return (

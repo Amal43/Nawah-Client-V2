@@ -122,18 +122,3 @@ label {
 .signup-btn input{
   padding: 13px 110px;
 }
-  
-/*media*/
-@media(max-width:768) {
-
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-  }
-
-  form {
-    width: 100%;
-  }
-
-}

@@ -1,4 +1,5 @@
-import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import { AsyncThunkAction, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import { AsyncThunkConfig } from "@reduxjs/toolkit/dist/createAsyncThunk";
 import axios from "axios";
 
 
@@ -6,7 +7,7 @@ interface userState {
     user:object |any
 }
 
-const url='http://localhost:3001';
+const url=`${process.env.REACT_APP_BASE_URL}/user`;
 const id:any=localStorage.getItem('userId');
 const parsedId =JSON.parse(id);
 console.log(parsedId)
@@ -16,16 +17,16 @@ const parsedToken =JSON.parse(token);
 
 export const getUser= createAsyncThunk(
     'user/getUser',
-    async(id:string)=>{
+    async(id:string,{ rejectWithValue,dispatch })=>{
         try{
-            const res= await axios.get(`${url}/user/${id}`,);
+            const res= await axios.get(`${url}/${id}`,);
             console.log(res.data)
             return res.data
         }catch (err:any){
             const errorMessage = err?.response?.data?.message ||
             'please double check your credentials';
             console.error(errorMessage);
-            throw err;
+            return rejectWithValue(errorMessage);
         } 
     }
 );
@@ -34,7 +35,7 @@ export const editProfile= createAsyncThunk(
     'user/editProfile',
     async(form:FormData,{ rejectWithValue })=>{
         try{
-            const res= await axios.put(`${url}/user/update/${parsedId}`,
+            const res= await axios.put(`${url}/${parsedId}`,
                 form,
                 {
                     headers: {
@@ -84,6 +85,7 @@ const userSlice = createSlice({
             .addCase(editProfile.fulfilled, (state, action) => {
                 state.user = action.payload.data;
                 console.log("fulfilled");
+                dispatch(getUser(parsedId));
             })
             .addCase(editProfile.rejected, (state, action) => {
                 state.user = action.payload;
@@ -94,3 +96,7 @@ const userSlice = createSlice({
 
 
 export default userSlice.reducer;
+
+function dispatch(arg0: AsyncThunkAction<any, string, AsyncThunkConfig>) {
+    throw new Error("Function not implemented.");
+}

@@ -6,7 +6,7 @@ interface farmerState {
     farmer:object |any
 }
 
-const url='http://localhost:3001';
+const url=`${process.env.REACT_APP_BASE_URL}/farmer`;
 const id:any=localStorage.getItem('userId');
 const parsedId =JSON.parse(id);
 console.log(parsedId)
@@ -18,7 +18,7 @@ export const getFarmer= createAsyncThunk(
     'farmer/getFarmer',
     async(id:string)=>{
         try{
-            const res= await axios.get(`${url}/farmer/${id}`,);
+            const res= await axios.get(`${url}/${id}`,);
             console.log(res.data)
             return res.data
         }catch (err:any){
@@ -34,7 +34,7 @@ export const editProfile= createAsyncThunk(
     'farmer/editProfile',
     async(form:FormData,{ rejectWithValue })=>{
         try{
-            const res= await axios.put(`${url}/farmer/update/${parsedId}`,
+            const res= await axios.put(`${url}/${parsedId}`,
                 form,
                 {
                     headers: {
@@ -57,7 +57,7 @@ export const addNotes= createAsyncThunk(
     'farmer/addNotes',
     async(data:object,{ rejectWithValue })=>{
         try{
-            const res= await axios.put(`${url}/farmer/addNote`,
+            const res= await axios.put(`${url}/addNote`,
                 data,
                 {
                     headers: {
@@ -109,6 +109,7 @@ const farmerSlice = createSlice({
                 state.farmer = action.payload.data;
                 console.log("fulfilled");
                 toast.success(' تم تعديل بياناتك بنجاح');
+                dispatch(getFarmer(parsedId));
             })
             .addCase(editProfile.rejected, (state, action) => {
                 state.farmer = action.payload;
@@ -133,3 +134,7 @@ const farmerSlice = createSlice({
 
 
 export default farmerSlice.reducer;
+
+function dispatch(arg0: any) {
+    throw new Error("Function not implemented.");
+}

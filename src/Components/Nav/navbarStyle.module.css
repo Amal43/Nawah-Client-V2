@@ -3,7 +3,8 @@
     src: url('../../Assets/font/Droid.ttf');
 }
 .nav{
-    background: white;
+    /* background: white; */
+    background-image: url('../../Assets/images/pattern.png');
 }
 a{
     visibility: visible;
@@ -12,10 +13,13 @@ a{
 .list{
     color: black;
     font-family: 'droid';
+    width: fit-content;
+    margin: 0 auto
 }
 .list:hover{
     background: #a3e0a8;
     border-radius: 5px;
+    width: fit-content;
 }
 .logout_btn{
     border: none;

@@ -3,27 +3,19 @@ import axios from 'axios';
 import { useDispatch} from 'react-redux';
 import { deleteProduct, getallproducts } from '../../Redux/Slices/ProductSlice';
 import FarmerStyle from "./FarmerStyle.module.css";
-import { IProduct } from '../../types/iProduct';
+import { IProduct } from '../../interfaces/iProduct';
 import { useAppSelector } from '../../Redux/hooks';
 import { AsyncThunkConfig } from '@reduxjs/toolkit/dist/createAsyncThunk';
 import EditProductModal from './EditProductModal';
 
 
 export default function FarmerProduct(id:any) {
-  const api ="http://localhost:3001/uploads/";
+  const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
   const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
   const {farmerprds} = useAppSelector((state) => state.product);
-  const [isDelete, SetIsDelete] = useState(false);
   useEffect(() => {
     dispatch(getallproducts())
   }, []);
-
-  useEffect(() => {
-    if(isDelete){
-        dispatch(getallproducts());
-        SetIsDelete(false);
-    }
-  }, [isDelete]);
 
   return (
       <div className={FarmerStyle.prdCard}>
@@ -47,7 +39,7 @@ export default function FarmerProduct(id:any) {
               <hr />
               <div style={{ display:"flex" ,  justifyContent: "space-evenly" }}>
                 <button className={FarmerStyle.prdbtn} 
-                    onClick={() => { dispatch(deleteProduct(item?._id) ,SetIsDelete(true))}}
+                    onClick={() => { dispatch(deleteProduct(item?._id))}}
                 >
                     <span style={{fontSize:"20px",color: "rgb(95, 91, 91)" }}>حذف</span>
                 </button>

@@ -50,11 +50,9 @@ function UserSignup() {
 
       try {
         dispatch(registerUser(form));
-        setSuccess('User registered successfully!');
         nav('/login');
       } catch (error) {
         console.log(error);
-        setSuccess('Error registering user. Please try again.');
       }
     }
   })

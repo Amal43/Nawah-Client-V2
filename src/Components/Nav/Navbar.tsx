@@ -17,7 +17,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { AsyncThunkConfig } from '@reduxjs/toolkit/dist/createAsyncThunk';
 import { logoutUser } from "../../Redux/Slices/AuthSlice";
 import { RootState } from "../../Redux/Store";
-
+import { FaCartShopping } from "react-icons/fa6";
 
 function Nav() {
   let nav = useNavigate();
@@ -73,7 +73,7 @@ function Nav() {
           className="collapse navbar-collapse justify-content-between"
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav text-sm-center mx-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav text-center mx-auto mb-2 mb-lg-0">
             <li className={`nav-item px-1 ${navStyle.list}`}>
               <NavLink className={`${"nav-link active"}`} aria-current="page" to="/home" >  الصفحة الرئيسية  </NavLink>
             </li>
@@ -89,7 +89,7 @@ function Nav() {
           </ul>
 
 
-          {!isLogged &&(<NavLink className={`${"btn btn-secondary"} ${navStyle.navbtn}`} to="/">
+          {!isLogged &&(<NavLink className={`${"btn btn-secondary"} ${navStyle.navbtn}`} to="/welcome">
             أنشئ حساب
           </NavLink>)}
 
@@ -119,20 +119,20 @@ function Nav() {
               anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
               <MenuItem onClick={handleClose}>
-                <Avatar sx={{ ml: 2}}/> Profile
+                <Avatar sx={{ ml: 2}}/> الصفحة الشحصية
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Avatar sx={{ ml: 2}}/> 
                 {authUser?.authUser?.role === 'user' &&(
-                  <NavLink className={`${"nav-link "}`} aria-current="page" to="/userProfile">My account</NavLink>
+                  <NavLink className={`${"nav-link "}`} aria-current="page" to="/userProfile">حسابي</NavLink>
                 )}
 
                 {authUser?.authUser?.role === 'engineer' &&(
-                  <NavLink className={`${"nav-link "}`} aria-current="page" to="/engineerProfile">My account</NavLink>
+                  <NavLink className={`${"nav-link "}`} aria-current="page" to="/engineerProfile">حسابي</NavLink>
                 )}
 
                 {authUser?.authUser?.role === 'farmer' &&(
-                  <NavLink className={`${"nav-link "}`} aria-current="page" to="/farmerProfile">My account</NavLink>
+                  <NavLink className={`${"nav-link "}`} aria-current="page" to="/farmerProfile">حسابي</NavLink>
                 )}
               </MenuItem>
               <Divider />
@@ -140,19 +140,19 @@ function Nav() {
                 <ListItemIcon>
                   <PersonAddIcon fontSize="medium" />
                 </ListItemIcon>
-                Add another account
+                  اضافة حساب اخر
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <ListItemIcon>
                   <SettingsIcon fontSize="medium" />
                 </ListItemIcon>
-                Settings
+                الاعدادات
               </MenuItem>
               <MenuItem  onClick={logout}>
                 <ListItemIcon>
                   <LogoutIcon fontSize="medium" />
                 </ListItemIcon>
-                Logout
+                  تسجيل الخروج
               </MenuItem>
             </Menu>
           </React.Fragment>)}

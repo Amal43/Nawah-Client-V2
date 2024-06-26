@@ -7,6 +7,7 @@ import ModalSlice from './Slices/ModalSlice';
 import UserSlice from './Slices/UserSlice';
 import FarmerSlice from './Slices/FarmerSlice';
 import EngineerSlice from './Slices/EngineerSlice';
+import OrderSlice from './Slices/OrderSlice';
 
 export const store:Store = configureStore({
         reducer:{
@@ -17,7 +18,8 @@ export const store:Store = configureStore({
                 modal:ModalSlice,
                 user:UserSlice,
                 farmer:FarmerSlice,
-                engineer:EngineerSlice
+                engineer:EngineerSlice,
+                order:OrderSlice
         },
 });
 

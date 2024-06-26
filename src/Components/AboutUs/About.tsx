@@ -1,6 +1,15 @@
 import about from './About.module.css';
 import user from '../../Assets/images/user.jfif';
 
+const teamMembers = [
+  { name: "عبدالرحمن علي", image: user },
+  { name: "الاء أكرم", image: user },
+  { name: "أمـل مـوسـي", image: user },
+  { name: "مـحمد بـدوي", image: user },
+  { name: "اسـراء صـلاح", image: user },
+  { name: "مـريـم مصـطفـي", image: user },
+];
+
 function About() {
   return (
     <section className={`${about.ecommerce_about_team} ${"bg-opacity-50"}`}>
@@ -17,98 +26,24 @@ function About() {
               </div>
             </div>
           </div>
-          <div className={"row gy-4 justify-content-between"}>
-            <div className={"col-xl-2 col-md-6"}>
-              <div className={`${[about.team_box]} ${about["text-center"]}`}>
-                <div className={about["team-img"]}>
-                  <img
-                    src={user}
-                    alt=""
-                    className={"img-fluid rounded rounded-circle border border-dashed border-dark border-opacity-25"}
-                  />
-                </div>
-                <div className={"mt-4 pt-1"}>
-                    <h5 className={`${about.team} ${"text-center"}`}>عـبدالرحمن عـلي</h5>
-                  <p className={"text-muted text-center"}>Our Founder</p>
-                </div>
-              </div>
-            </div>
-            <div className={"col-xl-2 col-md-6"}>
-              <div className={`${[about.team_box]} ${about["text-center"]}`}>
-                <div className={about["team-img"]}>
-                  <img
-                    src={user}
-                    alt=""
-                    className={"img-fluid rounded rounded-circle border border-dashed border-dark border-opacity-25"}
-                  />
-                </div>
-                <div className={"mt-4 pt-1"}>
-                    <h5 className={`${about.team} ${"text-center"}`}>الاء أكرم</h5>
-                  <p className={"text-muted text-center"}>Our Founder</p>
+          <div className={"row justify-content-around"}>
+            {teamMembers.map((member, index) => (
+              <div key={index} className={"col-xl-2 col-md-6 col-sm-12"}>
+                <div className={`${[about.team_box]} ${about["text-center"]}`}>
+                  <div className={about["team-img"]}>
+                    <img
+                      src={member.image}
+                      alt="member_image"
+                      className={"img-fluid rounded rounded-circle border border-dashed border-dark border-opacity-25"}
+                    />
+                  </div>
+                  <div className={"mt-4 pt-1"}>
+                    <h5 className={`${about.team} ${"text-center"}`}>{member.name}</h5>
+                    <p className={"text-muted text-center"}>Our Founder</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className={"col-xl-2 col-md-6"}>
-              <div className={`${[about.team_box]} ${about["text-center"]}`}>
-                <div className={about["team-img"]}>
-                  <img
-                    src={user}
-                    alt=""
-                    className={"img-fluid rounded rounded-circle border border-dashed border-dark border-opacity-25"}
-                  />
-                </div>
-                <div className={"mt-4 pt-1"}>
-                    <h5 className={`${about.team} ${"text-center"}`}> أمـل مـوسـي</h5>
-                  <p className={"text-muted text-center"}>Our Founder</p>
-                </div>
-              </div>
-            </div>
-            <div className={"col-xl-2 col-md-6"}>
-              <div className={`${[about.team_box]} ${about["text-center"]}`}>
-                <div className={about["team-img"]}>
-                  <img
-                    src={user}
-                    alt=""
-                    className={"img-fluid rounded rounded-circle border border-dashed border-dark border-opacity-25"}
-                  />
-                </div>
-                <div className={"mt-4 pt-1"}>
-                    <h5 className={`${about.team} ${"text-center"}`}>مـحمد بـدوي</h5>
-                  <p className={"text-muted text-center"}>Our Founder</p>
-                </div>
-              </div>
-            </div>
-            <div className={"col-xl-2 col-md-6"}>
-              <div className={`${[about.team_box]} ${about["text-center"]}`}>
-                <div className={about["team-img"]}>
-                  <img
-                    src={user}
-                    alt=""
-                    className={"img-fluid rounded rounded-circle border border-dashed border-dark border-opacity-25"}
-                  />
-                </div>
-                <div className={"mt-4 pt-1"}>
-                    <h5 className={`${about.team} ${"text-center"}`}>اسـراء صـلاح</h5>
-                  <p className={"text-muted text-center"}>Our Founder</p>
-                </div>
-              </div>
-            </div>
-            <div className={"col-xl-2 col-md-6"}>
-              <div className={`${[about.team_box]} ${about["text-center"]}`}>
-                <div className={about["team-img"]}>
-                  <img
-                    src={user}
-                    alt=""
-                    className={"img-fluid rounded rounded-circle border border-dashed border-dark border-opacity-25"}
-                  />
-                </div>
-                <div className={"mt-4 pt-1"}>
-                    <h5 className={`${about.team} ${"text-center"}`}>مـريـم مصـطفـي</h5>
-                  <p className={"text-muted text-center"}>Our Founder</p>
-                </div>
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
       </div>
@@ -116,4 +51,4 @@ function About() {
   )
 }
 
-export default About
+export default About;

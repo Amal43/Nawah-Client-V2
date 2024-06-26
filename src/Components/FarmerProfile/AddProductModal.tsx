@@ -10,7 +10,7 @@ import * as Yup from 'yup';
 import { AsyncThunkConfig } from '@reduxjs/toolkit/dist/createAsyncThunk';
 import { useDispatch } from 'react-redux';
 import { AddProduct ,getallproducts} from '../../Redux/Slices/ProductSlice';
-import IFarmer from '../../types/iFarmer';
+import IFarmer from '../../interfaces/iFarmer';
 
 export default function AddProductModal(farmer:any) {
     const farmerr:IFarmer =farmer?.Data;
@@ -18,7 +18,7 @@ export default function AddProductModal(farmer:any) {
     const[isAdd ,SetIsAdd] = useState(false)
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const api ="http://localhost:3001/uploads/";
+    const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
     const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
 
     const one = /^\d+$/;
@@ -63,13 +63,6 @@ export default function AddProductModal(farmer:any) {
             }
         },
     })
-
-    useEffect(() => {
-        if(isAdd){
-            dispatch(getallproducts());
-            SetIsAdd(false);
-        }
-    }, [isAdd]);
 
     return (
         <div>

@@ -1,17 +1,6 @@
 *{
     box-sizing: border-box;
 }
-body {
-    /* color: #797979;
-    background: #f1f2f7; */
-    /* font-family: 'Open Sans', sans-serif;
-    padding: 0px !important;
-    margin: 0px !important;
-    font-size: 20px;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased; */
-}
 @font-face {
   font-family: 'droid';
   src: url('../../Assets/font/Droid.ttf');
@@ -33,7 +22,6 @@ a{
 }
 
 /* Profile Styles */
- 
 .profileNav{
     margin: 1.875rem 0;
     position: relative;
@@ -45,23 +33,20 @@ a{
 
 }
 .profile_heading{
-    /* background:#a6c2ac ; */
     color: #656363;
     padding: 1.875rem;
     text-align: center;
     font-family: 'droid';
-
+    text-align: center;
 }
 .profile_heading h1{
     font-size:3.25rem;
     font-family: 'droid';
-
 }
 .profile_Img{
     border-radius: 50%;
     margin-bottom: 0.5rem;
     border: 10px solid rgba(255,255,255,0.3);
-
 }
 .nav_list{
     display: flex;
@@ -74,10 +59,6 @@ a{
 }
 .nav_list li a{
     color:#656363;
-}
-
-.nav_list li:hover{
-
 }
 
 /* Bio Styles */
@@ -536,4 +517,18 @@ a{
 
 .card .main button:hover{
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+
+@media (max-width: 992px) {
+  
+}
+
+@media (max-width:  786px) {
+  
+
+}
+
+@media (max-width: 527px) {
+  
 }

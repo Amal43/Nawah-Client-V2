@@ -12,14 +12,14 @@ import {FaCamera} from 'react-icons/fa';
 import { AsyncThunkConfig } from '@reduxjs/toolkit/dist/createAsyncThunk';
 import { useDispatch } from 'react-redux';
 import { editProfile } from '../../Redux/Slices/FarmerSlice';
-import IFarmer from '../../types/iFarmer';
+import IFarmer from '../../interfaces/iFarmer';
 
 export default function EditModal(farmer:any) {
     const farmerr:IFarmer =farmer?.Data;
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const api ="http://localhost:3001/uploads/";
+    const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
     const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
 
     let schema = Yup.object().shape({

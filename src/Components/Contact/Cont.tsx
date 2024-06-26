@@ -85,5 +85,5 @@ function Cont() {
   )
 }
 
-export default Cont
- 
+export default Cont;
+

@@ -4,12 +4,14 @@
 @font-face {
     font-family: 'droid';
     src: url('../../Assets/font/Droid.ttf');
-  }
+}
 a{
     visibility: visible;
 }
 .list {
     padding: 0.5rem 1rem;
+    width: 56%;
+    margin: 0 auto;
 }
 .list a{
     color:black;
@@ -17,14 +19,43 @@ a{
     font-size: 1rem;
     font-family: 'droid';
 }
+
 .list:hover{
     background: #81ba00;
     border-radius: 5px;
 }
+
 footer{
     background-image: url('../../Assets/images/pattern.png');
     align-self: center;
 }
 footer h2{
     font-size: 15px;
+}
+
+
+
+@media (max-width: 1200px) {
+    .list {
+        padding: 0.5rem 1rem;
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .list {
+        padding: 0.5rem 1rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .list {
+        padding: 0.5rem 1rem;
+        width: 40%;
+        margin: 0 auto;
+    }
 }

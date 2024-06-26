@@ -6,7 +6,7 @@ interface messageState {
     message: any;
 };
 
-const url='http://localhost:3001';
+const url=`${process.env.REACT_APP_BASE_URL}/contactMessg`;
 let token=JSON.parse(localStorage.getItem('token') || '{}');
 
 export const addmessage = createAsyncThunk(
@@ -14,7 +14,7 @@ export const addmessage = createAsyncThunk(
     async(values:object)=>{
         // console.log(values)
         try{
-            const res= await axios.post(`${url}/contactMessg/add`,
+            const res= await axios.post(`${url}/`,
                 values,
                 {
                     headers: {
@@ -51,7 +51,7 @@ const messageSlice = createSlice({
             })
             .addCase(addmessage.fulfilled, (state, action) => {
                 state.message = action.payload;
-                toast.success('Message send successfully');
+                toast.success('تم ارسال الرسالة بنجاح');
                 console.log("fulfilled");
             })
             .addCase(addmessage.rejected, (state, action) => {

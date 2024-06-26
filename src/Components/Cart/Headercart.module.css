@@ -1,5 +1,4 @@
 .header_cart{
-    background: #F9EBC7;
     height: 600px;
     background-image: url("../../Assets/images/cart.jpg");
     height: 280px;
@@ -11,7 +10,8 @@
 .header_cart_text h1{
     text-align: center;
     color: #FFF;
-    padding-top: 80px;
+    padding-top: 60px;
+    font-weight: 800;
     font-family:'Reem_Kufi';
 }
 .header_cart_text i{

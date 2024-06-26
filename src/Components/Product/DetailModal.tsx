@@ -5,12 +5,13 @@ import Fade from '@mui/material/Fade';
 import styles from './Product.module.css';
 import {FaEye  } from "react-icons/fa6";
 import Rating from "@mui/material/Rating";
+import { Height } from '@mui/icons-material';
 
 export default function DetailModal(details:any) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const api = "http://localhost:3001/uploads/";
+    const api = `${process.env.REACT_APP_UPLOAD_URL}/`;
 
 
     return (
@@ -31,13 +32,11 @@ export default function DetailModal(details:any) {
                 <Fade in={open}>
                 <ModalContent sx={style}>
                     <div className="row d-flex">
-                        <div className="col-md-6 col-sm-12 col-xs-12" style={{ direction: "rtl", textAlign: "right" }}>
+                        <div className="col-lg-6 col-md-12" style={{ direction: "rtl", textAlign: "right" }}>
                             <div className={`${"pr-30 pl-30"} ${styles.detail_info} `}>
                                 <span className={`${styles.stock_status}  ${styles.out_stock} `}> available </span>
                                 <h3 className="title-detail">
-                                    <a href="shop-product-right.html" className={styles.text_heading}>
-                                        {details?.details?.description}
-                                    </a>
+                                    {details?.details?.description}
                                 </h3>
                                 {/* <div className={styles['product-detail-rating']}>
                                     <Rating name="read-only" value={details?.details?.rates} readOnly
@@ -58,13 +57,13 @@ export default function DetailModal(details:any) {
 
                                 <div className={styles.font_xs}>
                                     <ul>
-                                        <li className={"mb-5"}>
+                                        <li>
                                             اسـم الـمـنـتـج:<span className={styles.text_brand}>  {details?.details?.name}</span>
                                         </li>
-                                        <li className={"mb-5"}>
+                                        <li>
                                             نوع المنتج  :<span className={styles.text_brand}>  {details?.details?.category}</span>
                                         </li>
-                                        <li className={"mb-5"}>
+                                        <li>
                                             الوصف :<span className={styles.text_brand}>  {details?.details?.description}</span>
                                         </li>
                                     </ul>
@@ -72,7 +71,7 @@ export default function DetailModal(details:any) {
                             </div>
                             {/* Detail Info */}
                         </div>
-                        <div className={` ${["col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5"]} ${styles.immg}`}>
+                        <div className={` ${["col-lg-6 col-md-12 mb-md-0 mb-sm-5"]} ${styles.immg}`}>
                             <div className={styles.detail_gallery}>
                                 {/* MAIN SLIDES */}
                                 <div className={styles.product_image_slider}>
@@ -141,7 +140,13 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 1000,
+    width: 900,
+
+    '@media (max-width:  992px)': {
+        width: '80%',  
+        maxWidth: '80%',  
+        maxHeight: '95vh',  
+    }
 };
 
 const ModalContent = styled('div')(
@@ -174,6 +179,11 @@ const ModalContent = styled('div')(
         font-weight: 400;
         color: ${theme.palette.mode === 'dark' ? grey[400] : grey[800]};
         margin-bottom: 4px;
+        }
+
+        @media (max-width: 992px) {
+            width: 90%; 
+            max-height: 90vh;
         }
     `,
 );

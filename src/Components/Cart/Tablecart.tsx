@@ -3,11 +3,17 @@ import tableCartStyles from "./Tablecart.module.css";
 import TableCartRow from "./TableCartRow";
 import empty from '../../Assets/images/emptycart.jpg'
 import { useAppSelector } from "../../Redux/hooks";
-import { IProduct } from "../../types/iProduct";
+import { IProduct } from "../../interfaces/iProduct";
+import { useEffect } from "react";
 
 function Tablecart() {
   const cart  = useAppSelector((state) => state.cart);
 console.log(cart)
+  useEffect(() => {
+    if (cart.cartItems.length === 0) {
+      console.log('Cart is empty');
+    }
+  }, [cart]);
   return (
     <div className={tableCartStyles.wrapper}>
       <div className="d-flex align-items-center justify-content-between">
@@ -113,7 +119,7 @@ console.log(cart)
 
               <div className="checkbtncon">
                 <NavLink className={tableCartStyles.checkbtn} to="/checkout">
-                  الى الحساب
+                  طلب
                 </NavLink>
               </div>
             </>

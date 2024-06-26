@@ -7,7 +7,7 @@ import { FaEdit } from "react-icons/fa";
 import UserStyle from "./UserStyle.module.css";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { IUser } from '../../types/iUser';
+import { IUser } from '../../interfaces/iUser';
 import UserHederStyle from './UserHeader.module.css';
 import {FaCamera} from 'react-icons/fa';
 import { AsyncThunkConfig } from '@reduxjs/toolkit/dist/createAsyncThunk';
@@ -20,7 +20,7 @@ export default function EditModal(user:any) {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const api ="http://localhost:3001/uploads/";
+    const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
     const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
     
     let schema = Yup.object().shape({

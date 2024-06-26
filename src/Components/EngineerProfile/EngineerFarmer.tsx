@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Engineer.module.css';
 import { Button } from '@mui/material';
-import IFarmer from '../../types/iFarmer';
+import IFarmer from '../../interfaces/iFarmer';
 import { FaClipboard  ,FaFacebookMessenger ,FaSeedling} from "react-icons/fa";
 import AddNotesModal from './AddNotesModal';
 
 function EngineerFarmer(engineer:any) {
     const farmers =engineer?.data?.farmers;
-    const api ="http://localhost:3001/uploads/";
+    const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
 
     return (
         <div className='d-flex justify-content-around gap-3'>

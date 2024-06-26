@@ -6,7 +6,8 @@ interface engineerState {
     engineer:object |any
 }
 
-const url='http://localhost:3001';
+const url=`${process.env.REACT_APP_BASE_URL}/engineer`;
+
 const id:any=localStorage.getItem('userId');
 const parsedId =JSON.parse(id);
 console.log(parsedId)
@@ -18,7 +19,7 @@ export const getEngineer= createAsyncThunk(
     'engineer/getEngineer',
     async(id:string)=>{
         try{
-            const res= await axios.get(`${url}/engineer/${id}`,);
+            const res= await axios.get(`${url}/${id}`,);
             console.log(res.data)
             return res.data
         }catch (err:any){
@@ -29,11 +30,6 @@ export const getEngineer= createAsyncThunk(
         } 
     }
 );
-
- 
-
-
-
 
 
 const engineerSlice = createSlice({

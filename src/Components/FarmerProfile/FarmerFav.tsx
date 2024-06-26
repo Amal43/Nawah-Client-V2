@@ -5,7 +5,7 @@ import { AsyncThunkConfig } from '@reduxjs/toolkit/dist/createAsyncThunk';
 import { addItem} from '../../Redux/Slices/CartSlice';
 import {removeFavItem } from '../../Redux/Slices/WishSlice';
 import Table from '@mui/material/Table';
-import { IProduct } from '../../types/iProduct';
+import { IProduct } from '../../interfaces/iProduct';
 import { FaCartShopping , FaXmark } from "react-icons/fa6";
 import emptywishes from '../../Assets/images/emptywishlist.jpg';
 import FarmerStyle from "./FarmerStyle.module.css";
@@ -13,7 +13,7 @@ import FarmerStyle from "./FarmerStyle.module.css";
 function FarmerFav() {
     const dispatch = useDispatch<any| object| AsyncThunkConfig>();
     const wish  = useAppSelector((state) => state.wish);
-    const api ="http://localhost:3001/uploads/";
+    const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
 
     return (
         <>

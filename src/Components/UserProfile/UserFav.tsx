@@ -1,7 +1,7 @@
 import { useDispatch} from 'react-redux';
 import styles from './UserStyle.module.css';
 import { useAppSelector } from '../../Redux/hooks';
-import { IProduct } from '../../types/iProduct';
+import { IProduct } from '../../interfaces/iProduct';
 import { FaCartShopping , FaXmark } from "react-icons/fa6";
 import { AsyncThunkConfig } from '@reduxjs/toolkit/dist/createAsyncThunk';
 import { addItem} from '../../Redux/Slices/CartSlice';
@@ -13,7 +13,7 @@ import UserStyle from "./UserStyle.module.css";
 function UserFav() {
     const dispatch = useDispatch<any| object| AsyncThunkConfig>();
     const wish  = useAppSelector((state) => state.wish);
-    const api ="http://localhost:3001/uploads/";
+    const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
     
     return (
         <>

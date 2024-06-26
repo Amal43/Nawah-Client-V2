@@ -1,9 +1,9 @@
-import { IUser } from '../../types/iUser';
+import { IUser } from '../../interfaces/iUser';
 import UserHederStyle from './UserHeader.module.css';
 
 export default function Header(user:any) {
   const userr:IUser =user?.UserData;
-  const api ="http://localhost:3001/uploads/";
+  const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
   
   return (
     <>

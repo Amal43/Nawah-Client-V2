@@ -1,6 +1,6 @@
 import { FaBell  } from "react-icons/fa";
 import FarmerStyle from "./FarmerStyle.module.css";
-import IFarmer from "../../types/iFarmer";
+import IFarmer from "../../interfaces/iFarmer";
 import { FaCartShopping } from "react-icons/fa6";
 import { CgNotes } from "react-icons/cg";
 import { addItem } from '../../Redux/Slices/CartSlice';
@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { AsyncThunkConfig } from "@reduxjs/toolkit/dist/createAsyncThunk";
 
 function Notifications(farmer:any) {
-    const api ="http://localhost:3001/uploads/";
+    const api =`${process.env.REACT_APP_UPLOAD_URL}/`;
     const farmerr:IFarmer =farmer?.data;
     const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
 

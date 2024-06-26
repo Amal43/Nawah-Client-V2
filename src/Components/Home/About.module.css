@@ -16,19 +16,15 @@
     width: 100%;
 }
 
-
 .about__text {
     width: 40%;
     margin-top: 50px;
     text-align: end;
-    /* font-family:'Reem_Kufi'; */
-
 }
 
 .about__text h3 {
     color: #000000;
     font-family:'Reem_Kufi';
-    
     font-size: 40px;
     font-weight: 700;
     line-height: 48px;
@@ -41,8 +37,6 @@
     font-size: 14px;
     line-height: 25px;
     color: #78847D;
-    /* font-family:'Reem_Kufi'; */
-
 }
 
 .abouttext {
@@ -72,8 +66,6 @@
     display: inline-block;
     float: none;
     font: 500 30px/78px "Playfair Display", cursive;
-    /* font-family:'Reem_Kufi'; */
-     
     color: #000000;
     height: 80px;
     text-align: center;
@@ -159,80 +151,61 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-@media (min-width: 1200) {
+@media (max-width: 1200px) {
     .About .row{
-        /* display: block; */
         justify-content: space-between;
     }
+
     .about__img , .about__text {
         width: 35%;
-        /* margin: 25px 0px; */
-        /* padding: 15px; */
-        /* text-align: center; */
     }
+    
     .about__img img {
         width: 100%;
-        /* margin: 25px 0px; */
-        /* padding: 15px; */
     }
 }
+
 @media (max-width: 992px) {
     .About .row{
-        /* display: block; */
-        justify-content: space-around;
+        justify-content: space-between;
     }
+
     .about__img , .about__text {
-        width: 40%;
-        /* margin: 25px 0px; */
-        /* padding: 15px; */
-        /* text-align: center; */
+        width: 45%;
     }
+
     .about__img img {
         width: 100%;
-        /* margin: 25px 0px; */
-        /* padding: 15px; */
     }
 }
+
 @media (max-width: 786px) {
     .About .row{
-        /* display: block; */
-        justify-content: space-around;
+        justify-content: space-between;
     }
+
     .about__img , .about__text {
-        width: 40%;
-        /* margin: 25px 0px; */
-        /* padding: 15px; */
-        /* text-align: center; */
+        width: 50%;
     }
+
     .about__img img {
-        width: 100%;
-        /* margin: 25px 0px; */
-        /* padding: 15px; */
+        width: 95%;
     }
 }
-@media (max-width: 527px) {
+
+@media (max-width: 576px) {
     .About .row{
         display: block;
     }
+
     .about__img , .about__text {
         width: 100%;
-        /* margin: 25px 0px; */
-        /* padding: 15px; */
         text-align: center;
     }
+
     .about__img img {
         width: 100%;
         margin: 25px 0px;
-        /* padding: 15px; */
     }
     
 }
