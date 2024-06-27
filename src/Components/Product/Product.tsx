@@ -17,10 +17,8 @@ function Product() {
     const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
     const { products } = useAppSelector((state) => state.product);
     let [arr, setarr] = useState<Array<IProduct>>([]);
-    let [active, setactive] = useState(false);
-    let [active2, setactive2] = useState(false);
-    let [active3, setactive3] = useState(false);
-    let [origin, setorigin] = useState([]);
+    let [origin, setOrigin] = useState<Array<IProduct>>([]);
+    let [activeCategory, setActiveCategory] = useState<string>('');
     
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,10 +26,18 @@ function Product() {
     useEffect(() => {
         dispatch(getallproducts()).then((result:any) => {
             setarr([...result.payload.data]);
-        }).catch((err:any) => {
+            setOrigin([...result.payload.data])
         });
-        setorigin(products);
     }, []);
+
+    useEffect(() => {
+        if (activeCategory) {
+            const filteredProducts = origin?.filter((item: IProduct) => item.category === activeCategory);
+            setarr(filteredProducts);
+        } else {
+            setarr(products);
+        }
+    }, [activeCategory,origin]);
     useEffect(()=>{
         authUser.isAuthenticated? setIsLoggedIn(true):setIsLoggedIn(false);
     },[authUser]);
@@ -44,20 +50,20 @@ function Product() {
                     <h2>المنتجات</h2>
                 </div>
                 <div className={styles['prod__butt']}>
-                    <button className={active ? styles.color : styles.active} >
+                    <button onClick={() => setActiveCategory('dates')} className={activeCategory === 'dates' ?  styles.active :styles.color }>
                         بلح
                     </button>
-                    <button className={active2 ? styles.color : styles.active}>
+                    <button onClick={() => setActiveCategory('palm')} className={activeCategory === 'palm' ? styles.active : styles.color }>
                         نخيل
                     </button>
-                    <button className={active3 ? styles.color : styles.active}>
+                    <button onClick={() => setActiveCategory('fertilizer')} className={activeCategory === 'fertilizer' ? styles.active : styles.color}>
                         سمـاد
                     </button>
                 </div>
                 <div className={styles.row}>
                     <div className={styles.items}>
                         {
-                            arr.map((item:IProduct) => {
+                            arr?.map((item:IProduct) => {
                                 return <Productcard product={item} key={item._id} />
                             })
                         }

@@ -149,7 +149,7 @@ const productSlice = createSlice({
                 console.log("pending");
             })
             .addCase(getallproducts.fulfilled, (state, action) => {
-                state.products = action.payload;
+                state.products = action.payload.data;
                 state.farmerprds = state?.products?.data?.filter((item:IProduct) => item?.farmerId === parsedId);
 
                 console.log("fulfilled");

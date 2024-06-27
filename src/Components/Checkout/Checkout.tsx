@@ -160,13 +160,13 @@ function Checkout() {
                                             style: {
                                                 base: {
                                                     fontSize: "20px",
-                                                    color: "#424770",
+                                                    color: "#464a64",
                                                     "::placeholder": {
                                                     color: "#7b7e81",
                                                     },
                                                 },
                                                 invalid: {
-                                                    color: "#9e2146",
+                                                    color: "#dc3a6a",
                                                 },
                                             },
                                         }}
