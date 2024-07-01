@@ -23,9 +23,11 @@ import EngineerProfile from './Pages/EngineerProfile';
 import CheckOut from './Pages/CheckOut';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import { useEffect } from 'react';
 const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`);
 
 function App() {
+
   return (
     <Provider store={store}>
         <ToastContainer/>
