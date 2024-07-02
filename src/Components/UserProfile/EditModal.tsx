@@ -28,8 +28,8 @@ export default function EditModal(user:any) {
         lname: Yup.string(),
         email: Yup.string().email("هذا الايميل غير صحيح"),
         password: Yup.number(),
-        phone: Yup.number().required("يجب ادخال هذا الحقل"),
-        address: Yup.string().required("يجب ادخال هذا الحقل"),
+        phone: Yup.number(),
+        address: Yup.string(),
     });
 
     const formikedit = useFormik({
@@ -102,7 +102,7 @@ export default function EditModal(user:any) {
                 <Fade in={open}>
                     <ModalContent sx={style}>
                         <form  lang="ar" onSubmit={formikedit.handleSubmit}>
-                            <div className={`${UserHederStyle.profile_pic}`} style={{margin:"10px auto"}}>
+                            <div className={`${UserHederStyle.profile_pic}`} style={{margin:"10px auto",width:""}}>
                                 <img className={ UserHederStyle.imagepro} src={formikedit.values.img!=null? URL.createObjectURL(formikedit.values.img):(`${api}${userr?.img}`)}  alt="avater"/>
                                 <div style={{ position: "absolute", top: "32%", right: "33%" }}>
                                     <label htmlFor="file">

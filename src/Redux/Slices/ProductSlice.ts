@@ -132,13 +132,13 @@ const productSlice = createSlice({
             state.farmerprds = state?.products?.data?.filter((item:IProduct) => item?.farmerId === parsedId);
         },
         fertilizers: (state) => {
-            state.fertilizer = state?.products?.data?.filter((item:IProduct) => item?.category === "fertilizer");
+            state.fertilizer = state?.products?.filter((item:IProduct) => item?.category === "fertilizer");
         },
         dates: (state) => {
-            state.dates = state?.products?.data?.filter((item:IProduct) => item?.category === "dates");
+            state.dates = state?.products?.filter((item:IProduct) => item?.category === "dates");
         },
         palm: (state) => {
-            state.palm = state?.products?.data?.filter((item:IProduct) => item?.category === "palm");
+            state.palm = state?.products?.filter((item:IProduct) => item?.category === "palm");
         },
     },
 

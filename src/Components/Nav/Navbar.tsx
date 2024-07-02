@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import navStyle from "./navbarStyle.module.css";
-import logo from "../../Assets/images/palm-leaf-products.jpg";
+import logo from "../../Assets/images/logo.png";
 import { NavLink,useNavigate} from 'react-router-dom'
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';

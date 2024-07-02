@@ -39,10 +39,14 @@ a{
     font-family: 'droid';
     text-align: center;
 }
+
 .profile_heading h1{
     font-size:3.25rem;
     font-family: 'droid';
+    display: inline-block;
 }
+
+
 .profile_Img{
     border-radius: 50%;
     margin-bottom: 0.5rem;

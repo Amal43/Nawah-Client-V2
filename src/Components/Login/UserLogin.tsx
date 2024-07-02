@@ -19,7 +19,7 @@ function UserLogin() {
 
  // YUb Validation
   let schema = Yup.object().shape({
-    email: Yup.string().min(15,"must be more than 15 letters").required('This field is required')
+    email: Yup.string().min(14,"must be more than 12 letters").required('This field is required')
     .email("Plase enter a valid email address"),
     password: Yup.string().min(6,"Password must be at least 6 letters").required('This field is required'),
   })
@@ -36,12 +36,14 @@ function UserLogin() {
     onSubmit:async(values) =>{
       console.log(values)
       try {
-        dispatch(loginUser(values))
-        setSuccess('User logged in successfully!');
-        nav('/home');
+        dispatch(loginUser(values)).then((result:any)=>{
+          if(result.payload){
+            nav('/home');
+          }
+        })
+        
       }catch (error) {
         console.log(error);
-        setSuccess('Error logged in user. Please try again.');
       }
     }
   })

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import FarmerStyle from "../FarmerProfile/FarmerStyle.module.css";
 import EngineerStyles from './Engineer.module.css';
 import EngineerBio from './EngineerBio';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch,} from 'react-redux';
 import { Button } from '@mui/material';
 import { FaList  ,FaUser} from "react-icons/fa";
 import { useAppSelector } from '../../Redux/hooks';
@@ -36,8 +36,8 @@ function EngineerProfileSide() {
           <div className={`col-md-3 ${FarmerStyle.profileNav}`}>
             <div>
               <div className={`${FarmerStyle.profile_heading} rounded-1`}>
-                <h2 className={`text-center`}>{engineer?.fname}</h2>
-                <h4 className={`text-center`}>{engineer?.lname}</h4>
+                <h2 className={`text-center`}>{engineer?.fname} {engineer?.lname}</h2>
+                <h4 className={`text-center`}>{engineer?.email}</h4>
               </div>
             </div>
 

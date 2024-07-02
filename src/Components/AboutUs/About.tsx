@@ -2,9 +2,9 @@ import about from './About.module.css';
 import user from '../../Assets/images/user.jfif';
 
 const teamMembers = [
+  { name: "أمـل مـوسـي", image: user },
   { name: "عبدالرحمن علي", image: user },
   { name: "الاء أكرم", image: user },
-  { name: "أمـل مـوسـي", image: user },
   { name: "مـحمد بـدوي", image: user },
   { name: "اسـراء صـلاح", image: user },
   { name: "مـريـم مصـطفـي", image: user },

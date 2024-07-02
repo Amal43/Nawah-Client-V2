@@ -49,8 +49,11 @@ function UserSignup() {
       };
 
       try {
-        dispatch(registerUser(form));
-        nav('/login');
+        dispatch(registerUser(form)).then((result:any)=>{
+          if(result.payload){
+            nav('/login');
+          }
+        });
       } catch (error) {
         console.log(error);
       }

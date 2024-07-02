@@ -3,9 +3,9 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "palm-leaf-products.jpg",
+      "src": "logo.png",
       "sizes": "512x512 32x32 24x24 16x16",
-      "type": "image/jpg"
+      "type": "image/png"
     }
   ],
   "start_url": ".",

@@ -24,9 +24,10 @@ export default function AddNotesModal(item:any) {
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const {fertilizer} = useAppSelector((state) => state.product);
+    const product = useAppSelector((state) => state.product);
+    const [fertilizer,setFertilizer] =useState<Array<IProduct>>([]);;
     useEffect(() => {
-        dispatch(fertilizers())
+        setFertilizer(product.fertilizer)
     }, []);
     const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
     
@@ -56,8 +57,8 @@ export default function AddNotesModal(item:any) {
                 setSelectedPrd("")
             }
         },
-    })
-
+    });
+    
     return (
         <>
             <button  className={styles.butt} 

@@ -33,7 +33,7 @@ export const getUser= createAsyncThunk(
 
 export const editProfile= createAsyncThunk(
     'user/editProfile',
-    async(form:FormData,{ rejectWithValue })=>{
+    async(form:FormData,{ rejectWithValue ,dispatch})=>{
         try{
             const res= await axios.put(`${url}/${parsedId}`,
                 form,
@@ -44,6 +44,7 @@ export const editProfile= createAsyncThunk(
                     },
                 }
             );
+            dispatch(getUser(parsedId));
             return res.data
         }catch (err:any){
             const errorMessage = err?.response?.data?.message ||

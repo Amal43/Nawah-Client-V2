@@ -1,5 +1,5 @@
 import FooterStyle from "./footerStyle.module.css";
-import logo2 from "../../Assets/images/palm-leaf-products.jpg";
+import logo2 from "../../Assets/images/logo.png";
 
 function Footer() {
   return (

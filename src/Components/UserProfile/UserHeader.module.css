@@ -29,6 +29,7 @@
 .profile_pic .imagepro{
     display: inline-block;
     max-width: 100%;
+    width:180px;
     height: 176px;
     border-radius: 50%;
 }

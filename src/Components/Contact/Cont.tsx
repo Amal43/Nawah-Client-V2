@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import contactStyle from './Contact.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import img from '../../Assets/images/contactbg.png';

@@ -64,7 +64,7 @@ const authSlice = createSlice({
             })
             .addCase(registerUser.fulfilled, (state, action) => {
                 state.authUser = action.payload;
-                toast.success('Register successfully');
+                toast.success('تم انشاء حساب بنجاح');
                 console.log("fulfilled");
             })
             .addCase(registerUser.rejected, (state, action) => {
