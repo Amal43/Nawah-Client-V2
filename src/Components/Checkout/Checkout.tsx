@@ -95,7 +95,7 @@ function Checkout() {
                         };
                         const resultAction = await dispatch(createOrder(orderdata));
                         if (createOrder.fulfilled.match(resultAction)) {
-                            navigate('/home', { replace: true });
+                            navigate('/success', { replace: true });
                         }
                     });
                 }
@@ -172,7 +172,7 @@ function Checkout() {
                                         }}
                                     />
                             </div>
-                            <input type="submit"  value="الآن ادفع" className={CheckoutStyle.btn}/>
+                            <input type="submit"  value="ادفع الآن " className={CheckoutStyle.btn}/>
                         
                         </form>
                 </div>

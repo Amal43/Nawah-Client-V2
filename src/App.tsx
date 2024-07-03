@@ -24,6 +24,7 @@ import CheckOut from './Pages/CheckOut';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { useEffect } from 'react';
+import SucessPayement from './Pages/SuccessPayment';
 const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`);
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             <Route path='product' element ={<Products/>}/>
             <Route path='cart' element ={<Cart/>}/>
             <Route path='checkout' element ={<CheckOut/>}/>
+            <Route path='success' element ={<SucessPayement/>}/>
             <Route path='userProfile' element ={<UserProfile/>}/>
             <Route path='farmerProfile' element ={<FarmerProfile/>}/>
             <Route path='engineerProfile' element ={<EngineerProfile/>}/>

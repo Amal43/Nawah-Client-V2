@@ -23,13 +23,13 @@ export const addmessage = createAsyncThunk(
                     },
                 }
             );
-            toast.success('Message send successfully');
+            toast.success('تم ارسال الرسالة بنجاح');
             return res.data
         }catch (err:any){
             const errorMessage = err?.response?.data?.message ||
             'please double check your credentials';
             console.error(errorMessage);
-            toast.error(errorMessage);
+            toast.error(" يوجد مشكلة يرجى المحاولة لاحقا");
             throw err;
         } 
     }

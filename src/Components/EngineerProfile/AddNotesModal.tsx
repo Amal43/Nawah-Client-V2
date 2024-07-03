@@ -13,7 +13,6 @@ import { IProduct } from '../../interfaces/iProduct';
 import { fertilizers } from '../../Redux/Slices/ProductSlice';
 import Table from '@mui/material/Table';
 import { addNotes } from '../../Redux/Slices/FarmerSlice';
- 
 
 
 export default function AddNotesModal(item:any) {
@@ -25,10 +24,11 @@ export default function AddNotesModal(item:any) {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const product = useAppSelector((state) => state.product);
-    const [fertilizer,setFertilizer] =useState<Array<IProduct>>([]);;
+    const [fertilizer,setFertilizer] =useState<Array<IProduct>>([]);
+    
     useEffect(() => {
         setFertilizer(product.fertilizer)
-    }, []);
+    }, [fertilizer]);
     const dispatch = useDispatch()<any| object| AsyncThunkConfig>;
     
     const handleClick = (id:string) => {
@@ -52,13 +52,17 @@ export default function AddNotesModal(item:any) {
                 farmerId:farmerId,
                 productId:selectedPrd,
             }
+            console.log(selectedPrd)
             if(values.note !== ""){
-                dispatch(addNotes(data))
-                setSelectedPrd("")
+                dispatch(addNotes(data)).then((result:any)=>{
+                    if(result.payload){
+                        setSelectedPrd("");
+                    }
+                })
             }
         },
     });
-    
+    console.log(product)
     return (
         <>
             <button  className={styles.butt} 

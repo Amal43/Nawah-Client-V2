@@ -55,7 +55,7 @@ export const editProfile= createAsyncThunk(
 );
 
 export const addNotes= createAsyncThunk(
-    'farmer/addNotes',
+    'farmer/addNote',
     async(data:object,{ rejectWithValue })=>{
         try{
             const res= await axios.put(`${url}/addNote`,

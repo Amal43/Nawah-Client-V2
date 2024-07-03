@@ -33,10 +33,11 @@ export const getUser= createAsyncThunk(
 
 export const editProfile= createAsyncThunk(
     'user/editProfile',
-    async(form:FormData,{ rejectWithValue ,dispatch})=>{
+    async(data:any,{ rejectWithValue ,dispatch})=>{
+        console.log(data)
         try{
-            const res= await axios.put(`${url}/${parsedId}`,
-                form,
+            const res= await axios.put(`${url}/${data?.id}`,
+                data?.form,
                 {
                     headers: {
                         authorization: `Bearer ${parsedToken}`,
@@ -44,7 +45,7 @@ export const editProfile= createAsyncThunk(
                     },
                 }
             );
-            dispatch(getUser(parsedId));
+            dispatch(getUser(data?.id));
             return res.data
         }catch (err:any){
             const errorMessage = err?.response?.data?.message ||

@@ -150,8 +150,8 @@ const productSlice = createSlice({
             })
             .addCase(getallproducts.fulfilled, (state, action) => {
                 state.products = action.payload.data;
-                state.farmerprds = state?.products?.data?.filter((item:IProduct) => item?.farmerId === parsedId);
-
+                state.farmerprds = state?.products?.filter((item:IProduct) => item?.farmerId === parsedId);
+                state.fertilizer = state?.products?.filter((item:IProduct) => item?.category === "fertilizer");
                 console.log("fulfilled");
             })
             .addCase(getallproducts.rejected, (state, action) => {
@@ -165,7 +165,7 @@ const productSlice = createSlice({
             })
             .addCase(AddProduct.fulfilled, (state, action) => {
                 state.products = action.payload;
-                // state.farmerprds = state?.products?.data?.filter((item:IProduct) => item?.farmerId === parsedId);
+                state.farmerprds = state?.products?.data?.filter((item:IProduct) => item?.farmerId === parsedId);
                 console.log("fulfilled");
                 toast.success(' تم اضافة المنتج بنجاح');
             })
@@ -180,7 +180,7 @@ const productSlice = createSlice({
             })
             .addCase(editProduct.fulfilled, (state, action) => {
                 state.products = action.payload;
-                // state.farmerprds = state?.products?.data?.filter((item:IProduct) => item?.farmerId === parsedId);
+                state.farmerprds = state?.products?.data?.filter((item:IProduct) => item?.farmerId === parsedId);
                 console.log("fulfilled");
                 toast.success(' تم تعديل المنتج بنجاح');
             })

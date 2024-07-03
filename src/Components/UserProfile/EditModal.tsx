@@ -58,6 +58,8 @@ export default function EditModal(user:any) {
 
             if(values.email !== ""){
                 form.append("email", values.email);
+            }else{
+                form.append("email", userr?.email);
             }
 
             if(values.password !== ""){
@@ -77,7 +79,7 @@ export default function EditModal(user:any) {
             }
 
             try {
-                await dispatch(editProfile(form));
+                await dispatch(editProfile({form,id:userr._id}));
             } catch (error) {
                 console.log(error);
             }
@@ -141,7 +143,7 @@ export default function EditModal(user:any) {
                                         placeholder={userr?.email}
                                         id='email'
                                         name='email'
-                                        type='text'
+                                        type='email'
                                         onChange={formikedit.handleChange}
                                     />
                                     {formikedit.errors.email && <small id="email" style={{ color: "#fa3d3d" }}>  {formikedit.errors.email} </small>}

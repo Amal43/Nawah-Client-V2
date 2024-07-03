@@ -161,6 +161,23 @@
 .prdimg{
   width: 280px;
 }
+
+/* ************sucess pay*************** */
+.successdiv {
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.successdiv.success {
+  display: block;
+  margin: auto;
+  width: 25%;
+}
+.successdiv h2{
+    font-weight: 600;
+    color: #363636;
+}
 @media (max-width: 992px) {
   .prdimg{
     width: 240px;
